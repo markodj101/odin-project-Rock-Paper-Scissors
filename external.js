@@ -1,3 +1,10 @@
+function game(){
+    
+}
+
+
+
+
 function getComputerChoice(){
     let lista = ["list", "kamen", "makaze"]
     let izborr = Math.floor(Math.random() * lista.length)
