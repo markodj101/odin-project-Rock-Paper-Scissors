@@ -1,0 +1,132 @@
+    body{
+    
+        background: repeating-radial-gradient(hsl(214, 47%, 23%),hsl(237, 49%, 15%));
+        height: auto;
+        width: auto;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .main{
+        margin: 50px;
+        height: 200px;
+        width: 900px;
+        border: 2px solid  hsl(217, 16%, 45%);
+        border-radius: 15px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        
+        
+    }
+    .text{
+        font-family: "Barlow Semi Condensed", sans-serif;
+        color: white;
+        font-size: 60px;
+       
+    }
+    .big-picture{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .name{
+        font-family: "Barlow Semi Condensed", sans-serif;
+        color: white;
+        
+    }
+    .score{
+        font-family: "Barlow Semi Condensed", sans-serif;
+        color: hsl(229, 25%, 31%);
+        align-self: center;
+        margin-bottom: 0px;
+    }
+
+    .scorediv{
+        border: 2px solid white;
+        border-radius: 15px;
+        width: 200px;
+        background: white;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .scorenum{
+        font-family: "Barlow Semi Condensed", sans-serif;
+        color: hsl(229, 25%, 31%);
+        font-size: 40px;
+        align-self: center;
+    
+    }
+
+    .game{
+        height: 200px;
+        width: 900px;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+
+    }
+
+    .scissors{
+        
+        height: 150px;
+        width: 150px;
+        border: 20px solid  hsl(39, 89%, 49%);
+        border-radius: 100%;
+        background-color: white;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+    }
+
+
+
+    .rock{
+    
+        height: 150px;
+        width: 150px;
+        border: 20px solid  hsl(349, 71%, 52%);
+        border-radius: 100%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .paper{
+     
+        height: 150px;
+        width: 150px;
+        border: 20px solid  hsl(230, 89%, 62%);
+        border-radius: 100%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .btn-scissors{
+        background-color: white;
+        border: 0px solid white;
+    }
+    .btn-rock{
+        background-color: white;
+        border: 0px solid white;
+    }
+    .btn-paper{
+        background-color: white;
+        border: 0px solid white;
+    }
+
