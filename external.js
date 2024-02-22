@@ -1,88 +1,111 @@
+let playerChoice = "nothing"
+let computerChoice = "nothing"
+let player = 0, computer = 0
+
 function game(){
-    
-    let igrac = 0, kompjuter = 0
-    for (let i = 0; i < 5; i++) {
-         playerSelection = prompt("Unesi list ili kamen ili makaze:")
-        let computerSelection = getComputerChoice();
-        let rezultat = playRound(playerSelection, computerSelection);
-        if (rezultat.includes("Win")){
-            igrac +=1;
-        }
-        else if (rezultat.includes("Tie")){
-            igrac +=1;
-            kompjuter +=1;
-        }
-        else  {
-            kompjuter +=1;
-        }
-        console.log(rezultat)
-        console.log ("Ovo je pratija broj :" + (i+1))
-        
-    }
-    if (igrac>kompjuter){
-        console.log("Igrac je pobjedio")
-    }
-    else if (kompjuter>igrac){
-        console.log("Kompjuter je pobjedio")
-    }
-    else{
-        console.log("Nema pobjednika")
-    }
+    document.getElementById("scissors").addEventListener("click", () => {
+        playerChoice = "scissors"
+        console.log("Player selected " + playerChoice)
+        playRound()
+    })
+    document.getElementById("rock").addEventListener("click", () => {
+        playerChoice = "rock"
+        console.log("Player selected " + playerChoice)
+        playRound()
+    })
+    document.getElementById("paper").addEventListener("click", () => {
+        playerChoice = "paper"
+        console.log("Player selected " + playerChoice)
+        playRound()
+    })
 }
 
-
-
-
-function getComputerChoice(){
-    let lista = ["list", "kamen", "makaze"]
-    let izborr = Math.floor(Math.random() * lista.length)
-    return lista[izborr]
-}
-
-
-
-function playRound(playerSelection, computerSelection) {
-    console.log(getComputerChoice());
-    let player = String(playerSelection.toLowerCase())
-    if (player == "makaze"){
-        if (computerSelection == "kamen"){
-            return "You Lose! Rock beats Scissors"
+function playRound() {
+    computerChoice = getComputerChoice()
+    console.log("Computer selected " + computerChoice)
+    if (playerChoice == "scissors"){
+        if (computerChoice == "rock"){
+            document.getElementById("text").innerHTML = "You Lose! Rock beats Scissors"
+            computer += 1
         }
-        else if (computerSelection =="makaze"){
-            return "Tie!"
+        else if (computerChoice == "scissors"){
+            
+            document.getElementById("text").innerHTML = "Tie!"
+            player += 1
+            computer += 1
         }
         else {
-            return "You Win! Scissors beats Paper"
+            document.getElementById("text").innerHTML = "You Win! Scissors beats Paper"
+            player += 1
         }
     }
-    else if (player == "list"){
-        if (computerSelection == "kamen"){
-            return "You Win! Paper beats Rock"
+    else if (playerChoice == "paper"){
+        if (computerChoice == "rock"){
+            document.getElementById("text").innerHTML = "You Win! Paper beats Rock"
+            player += 1
         }
-        else if (computerSelection =="makaze"){
-            return "You Lose! Scissors beats Paper"
+        else if (computerChoice == "scissors"){
+            document.getElementById("text").innerHTML = "You Lose! Scissors beats Paper"
+            computer += 1
         }
         else {
-            return "Tie!"
+            document.getElementById("text").innerHTML = "Tie!"
+            player += 1
+            computer += 1
         }
     }
-    else if (player == "kamen"){
-        if (computerSelection == "kamen"){
-            return "Tie!"
+    else if (playerChoice == "rock"){
+        if (computerChoice == "rock"){
+            document.getElementById("text").innerHTML = "Tie!"
+            player += 1
+            computer += 1
         }
-        else if (computerSelection =="makaze"){
-            return "You Win! Rock beats Scissors"
+        else if (computerChoice == "scissors"){
+            document.getElementById("text").innerHTML = "You Win! Rock beats Scissors"
+            player += 1
         }
         else {
-            return "You Lose! Paper beats Scissors"
+            document.getElementById("text").innerHTML = "You Lose! Paper beats Rock"
+            computer += 1
         }
     }
     else {
-
-        return  playerSelection = prompt("Igrac nije dobro unio unesite opet")
+        console.log("Invalid choice")
     }
-  }
 
-  let playerSelection;
+    if (player + computer < 5){
+        console.log("Next round")
+        document.getElementById("score").innerHTML = player + ":" + computer    
+    }
+    else{
+        if (player > computer){
+            document.getElementById("text").innerHTML = "Player wins the game"
+            console.log("The Game is over: Player wins the game")
+            player  = 0
+            computer = 0
+            document.getElementById("score").innerHTML = player + ":" + computer 
+        }
+        else if (computer > player){
+            document.getElementById("text").innerHTML = "Computer wins the game"
+            console.log("The Game is over: Computer wins the game")
+            player  = 0
+            computer = 0
+            document.getElementById("score").innerHTML = player + ":" + computer 
+        }
+        else{
+            document.getElementById("text").innerHTML = "It's a tie"
+            console.log("The Game is over: It's a tie")
+            player  = 0
+            computer = 0
+            document.getElementById("score").innerHTML = player + ":" + computer 
+        }
+    }
+}
 
-  game()
+function getComputerChoice(){
+    let choices = ["rock", "paper", "scissors"]
+    let n = Math.floor(Math.random() * choices.length)
+    return choices[n]
+}
+
+game()

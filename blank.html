@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="external.js"></script>
+    <title>Rock-Paper-Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
+    <div class="main"><h1 class="name">ROCKA<br>PAPER<br>SCISSORS</h1>
+    <div class="scorediv"><h1 class="score">Score:</h1><h1 id="score" class="scorenum">0:0</h1>
+    </div>
+</div>
+<div class="big-picture">
+<div class="game">
+    <div class="scissors"><button id="scissors" class="btn-scissors"><img src="images/icon-scissors.svg" alt="scissors"></button></div>
+
+    <div class="rock"><button id="rock" class="btn-rock"><img src="images/icon-rock.svg" alt="scissors"></button></div>
     
+    <div class="paper"><button id="paper" class="btn-paper"><img src="images/icon-paper.svg" alt="scissors"></button></div>
+</div>
+<h1 id="text" class="text"></h1>
+</div>
 </body>
+<script src="external.js"></script>
 </html>
